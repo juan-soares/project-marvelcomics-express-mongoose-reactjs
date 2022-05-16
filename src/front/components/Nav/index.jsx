@@ -14,6 +14,11 @@ const Nav = () => {
             <button>Localizações</button>
           </Link>
         </li>
+        <li>
+          <Link to="/earths">
+            <button>Universos</button>
+          </Link>
+        </li>
       </ul>
     </nav>
   );
