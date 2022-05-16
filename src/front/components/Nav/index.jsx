@@ -19,6 +19,11 @@ const Nav = () => {
             <button>Universos</button>
           </Link>
         </li>
+        <li>
+          <Link to="/characters">
+            <button>Personagens</button>
+          </Link>
+        </li>
       </ul>
     </nav>
   );
