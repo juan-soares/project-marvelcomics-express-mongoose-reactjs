@@ -5,8 +5,4 @@ const EarthTypeSchema = new mongoose.Schema({
   description: { type: String, default: "?" },
 });
 
-module.exports = mongoose.model(
-  "EarthType",
-  EarthTypeSchema,
-  "earthTypes"
-);
+module.exports = mongoose.model("EarthType", EarthTypeSchema, "earthTypes");

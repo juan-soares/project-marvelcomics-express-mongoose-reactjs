@@ -6,7 +6,7 @@ const CharacterAffiliationSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model(
-  "CharacterAffiliaton",
+  "CharacterAffiliation",
   CharacterAffiliationSchema,
-  "characterAffiliatons"
+  "characterAffiliations"
 );

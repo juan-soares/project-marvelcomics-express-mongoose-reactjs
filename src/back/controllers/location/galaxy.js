@@ -2,7 +2,7 @@ const messages = require("../../messages");
 const LocationGalaxy = require("../../models/location/galaxy");
 
 async function getLocationGalaxy(req, res) {
-  const locationGalaxyList = await LocationGalaxy.find().populate('status');
+  const locationGalaxyList = await LocationGalaxy.find().populate("status");
 
   if (locationGalaxyList.length === 0) {
     res.status(400).json(messages.notFound);

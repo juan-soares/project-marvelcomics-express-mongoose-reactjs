@@ -17,8 +17,8 @@ const characterSchema = new mongoose.Schema({
   status: { type: mongoose.Schema.Types.ObjectId, ref: "CharacterStatus" },
   earth: { type: mongoose.Schema.Types.ObjectId, ref: "Earth" },
   name: { type: String, required: true },
-  pictureOne: [{ type: String, default: "/no-image.jpg" }],
-  pictureTwo: [{ type: String, default: "/no-image.jpg" }],
+  pictureOne: [{ type: String, default: "/images/characters/no_image.jpg" }],
+  pictureTwo: [{ type: String, default: "/images/characters/no_image.jpg" }],
   occupations: { type: String, default: "?" },
 });
 

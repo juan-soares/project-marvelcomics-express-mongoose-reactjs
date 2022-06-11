@@ -10,4 +10,3 @@ module.exports = mongoose.model(
   locationStatusSchema,
   "locationStatus"
 );
-
