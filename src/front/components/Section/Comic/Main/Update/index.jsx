@@ -41,7 +41,8 @@ const MainUpdate = () => {
         newComic.newCharacters = [e.target.value];
 
       if (e.target.id === "cover" && e.target.id !== "")
-        newComic.cover = newComic.nameUsa.replaceAll(" ", "_") + ".jpg";
+        newComic.cover =
+          newComic.nameUsa.replaceAll(" ", "_").replaceAll("#", "") + ".jpg";
 
       setNewComic(newComic);
       console.log(newComic);
@@ -138,27 +139,28 @@ const MainUpdate = () => {
             />
 
             <label htmlFor="earths">Universos:</label>
-            <select id="earths" onChange={(e) => handleChange(e)}>
-              <option hidden>
-                {newComic.earths[0]?.identification &&
-                  newComic.earths[0].identification}
-              </option>
-              {earthList.map((earth) => (
-                <option key={earth._id} value={earth._id}>
-                  {`${earth.identification} (${earth.nameUsa})`}
-                </option>
-              ))}
-            </select>
+            {newComic.earths.map((earth) => (
+              <select id="earths" onChange={(e) => handleChange(e)}>
+                <option hidden>{earth.identification}</option>
+                {earthList.map((earth) => (
+                  <option key={earth._id} value={earth._id}>
+                    {`${earth.identification} (${earth.nameUsa})`}
+                  </option>
+                ))}
+              </select>
+            ))}
 
             <label htmlFor="newCharacters">Novos Personagens:</label>
-            <select id="newCharacters" onChange={(e) => handleChange(e)}>
-              <option hidden>{newComic.newCharacters[0]?.name}</option>
-              {characterList.map((newCharacter) => (
-                <option key={newCharacter._id} value={newCharacter._id}>
-                  {`${newCharacter.name} (${newCharacter.status.name})`}
-                </option>
-              ))}
-            </select>
+            {newComic.newCharacters.map((newCharacter) => (
+              <select id="newCharacters" onChange={(e) => handleChange(e)}>
+                <option hidden>{newCharacter}</option>
+                {characterList.map((newCharacter) => (
+                  <option key={newCharacter._id} value={newCharacter._id}>
+                    {`${newCharacter.name} (${newCharacter.status.name})`}
+                  </option>
+                ))}
+              </select>
+            ))}
 
             <label htmlFor="downloaded">Baixado:</label>
             <select id="downloaded" onChange={(e) => handleChange(e)}>

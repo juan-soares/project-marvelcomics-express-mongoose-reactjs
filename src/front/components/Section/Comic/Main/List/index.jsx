@@ -46,7 +46,10 @@ const MainList = ({ ComicProperty }) => {
                 <td>{comic.vol}</td>
 
                 <td>
-                  <img src={comic.cover} alt="" />
+                  <img
+                    src={process.env.REACT_APP_BASE_URL + comic.cover}
+                    alt=""
+                  />
                 </td>
 
                 <td>{comic.downloaded ? "SIM" : "NAO"} </td>

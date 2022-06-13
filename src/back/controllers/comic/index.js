@@ -31,7 +31,7 @@ async function postComic(req, res) {
     newComic.cover = "/images/covers/no_cover.jpg";
     newComic.irrelevant = true;
   } else {
-    newComic.cover = req.body.cover;
+    newComic.cover = "/images/covers/" + req.body.cover;
   }
 
   await newComic.save((err) => {
