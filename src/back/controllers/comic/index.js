@@ -25,6 +25,7 @@ async function postComic(req, res) {
     earths: req.body.earths,
     newCharacters: req.body.newCharacters,
     stories: req.body.stories,
+    arc: req.body.arc,
   });
 
   if (req.body.cover === "") {
@@ -43,7 +44,7 @@ async function postComic(req, res) {
 }
 
 async function putComic(req, res) {
-  await Comic.findByIdAndUpdate(req.body._id, {
+  let updatedComic = {
     nameUsa: req.body.nameUsa,
     nameBra: req.body.nameBra,
     vol: req.body.vol,
@@ -55,7 +56,13 @@ async function putComic(req, res) {
     earths: req.body.earths,
     newCharacters: req.body.newCharacters,
     stories: req.body.stories,
-  });
+    arc: req.body.arc,
+  };
+
+  if (req.body.cover !== "")
+    updatedComic.cover = "/images/covers/" + req.body.cover;
+
+  await Comic.findByIdAndUpdate(req.body._id, updatedComic);
 
   res.status(200).json(messages.sucessSave);
 }

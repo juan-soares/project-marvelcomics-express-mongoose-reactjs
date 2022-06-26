@@ -13,6 +13,7 @@ const comicSchema = new mongoose.Schema({
   earths: [{ type: mongoose.Schema.Types.ObjectId, ref: "Earth" }],
   newCharacters: [{ type: mongoose.Schema.Types.ObjectId, ref: "Character" }],
   stories: { type: String, default: "?" },
+  arc: { type: String, default: "?" },
 });
 
 module.exports = mongoose.model("Comic", comicSchema, "comics");

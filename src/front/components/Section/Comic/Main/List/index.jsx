@@ -32,6 +32,7 @@ const MainList = ({ ComicProperty }) => {
 
             <th>Universos</th>
             <th>Histórias</th>
+            <th>Arco</th>
             <th>Novos Personagens</th>
           </tr>
         </thead>
@@ -68,6 +69,7 @@ const MainList = ({ ComicProperty }) => {
                 </td>
 
                 <td>{comic.stories}</td>
+                <td>{comic.arc}</td>
 
                 <td>
                   {comic.newCharacters.map((newCharacter) => {

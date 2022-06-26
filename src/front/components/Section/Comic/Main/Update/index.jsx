@@ -11,6 +11,7 @@ const MainUpdate = () => {
     stories: "?",
     date: "",
     newCharacters: [],
+    arc: "?",
   });
 
   const [showComic, setShowComic] = useState(false);
@@ -40,9 +41,8 @@ const MainUpdate = () => {
       if (e.target.id === "newCharacters")
         newComic.newCharacters = [e.target.value];
 
-      if (e.target.id === "cover" && e.target.id !== "")
-        newComic.cover =
-          newComic.nameUsa.replaceAll(" ", "_").replaceAll("#", "") + ".jpg";
+      if (e.target.id === "cover" && e.target.id !== "" && e.target.files[0])
+        newComic.cover = e.target.files[0].name;
 
       setNewComic(newComic);
       console.log(newComic);
@@ -135,6 +135,14 @@ const MainUpdate = () => {
               type="text"
               id="stories"
               defaultValue={newComic.stories}
+              onChange={(e) => handleChange(e)}
+            />
+
+            <label htmlFor="arc">Arco:</label>
+            <input
+              type="text"
+              id="arc"
+              defaultValue={newComic.arc}
               onChange={(e) => handleChange(e)}
             />
 

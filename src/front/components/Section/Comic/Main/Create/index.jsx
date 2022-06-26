@@ -9,6 +9,7 @@ const MainCreate = () => {
     earths: [],
     stories: "?",
     date: "",
+    arc: "?",
     newCharacters: [],
   });
 
@@ -40,9 +41,12 @@ const MainCreate = () => {
     if (e.target.id === "newCharacters")
       newComic.newCharacters = [e.target.value];
 
-    if (e.target.id === "cover" && e.target.id !== "")
-      newComic.cover =
-        newComic.nameUsa.replaceAll(" ", "_").replaceAll("#", "") + ".jpg";
+    if (e.target.id === "cover" && e.target.id !== "" && e.target.files[0])
+      newComic.cover = e.target.files[0].name;
+    /*  newComic.nameUsa
+          .replaceAll(":", "")
+          .replaceAll(" ", "_")
+          .replaceAll("#", "") + ".jpg"; */
 
     setNewComic(newComic);
     console.log(newComic);
@@ -96,6 +100,8 @@ const MainCreate = () => {
         <input type="file" id="cover" onChange={(e) => handleChange(e)} />
         <label htmlFor="stories">Histórias:</label>
         <input type="text" id="stories" onChange={(e) => handleChange(e)} />
+        <label htmlFor="arc">Arco:</label>
+        <input type="text" id="arc" onChange={(e) => handleChange(e)} />
 
         <label htmlFor="earths">Universos:</label>
         {addEarth}
