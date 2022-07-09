@@ -14,19 +14,18 @@ async function getComic(req, res) {
 }
 
 async function postComic(req, res) {
-  /* // ADD-BY-LOTS
+  // ADD-BY-LOTS
   const dates = [
-   "1997-03-26",
-   "1999-08-04",
+   
   ];
-  let n = "1997";
+  let n = 1;
 
   dates.map(async (date) => {
     let c = new Comic({
+      cover: `/images/covers/X-Men_Unlimited_Infinity_Comic_Vol_1_${n}.jpg`,
+      vol: "X-Men Unlimited Infinity Comic Vol 1",
       date: date,
-      nameUsa: `Incredible Hulk Annual Vol 1 #${n}`,
       nameBra: "?",
-      vol: "Incredible Hulk Annual Vol 1",
       downloaded: false,
       readen: false,
       translated: false,
@@ -34,12 +33,12 @@ async function postComic(req, res) {
       newCharacters: [],
       stories: "?",
       arc: "?",
-      cover: `/images/covers/Incredible_Hulk_Annual_Vol_1_${n}.jpg`,
     });
 
-    if (n == "16") c.arc = "Lifeform";
-    if (n == "17") c.arc = "Subterranean Wars";
-    if (n == "18") c.arc = "Return of the Defenders Wars";
+    c.nameUsa = `${c.vol} #${n}`
+
+    //if (n === 3) c.arc = "Destiny of X";
+
 
     console.log(c);
     n++;
@@ -49,8 +48,8 @@ async function postComic(req, res) {
       if (err) handleError(err);
     });
   });
- */
-  // ADD-BY-ONE
+
+/*   // ADD-BY-ONE
   const newComic = new Comic({
     date: req.body.date,
     nameUsa: req.body.nameUsa,
@@ -75,7 +74,7 @@ async function postComic(req, res) {
   await newComic.save((err) => {
     // eslint-disable-next-line no-undef
     if (err) handleError(err);
-  });
+  }); */
 
   res.status(200).json(messages.sucessSave);
 }
