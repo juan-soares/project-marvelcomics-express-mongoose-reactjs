@@ -9,21 +9,24 @@ async function getComic(req, res) {
   if (comicList.length === 0) {
     res.status(400).json(messages.notFound);
   } else {
-    res.status(200).json(comicList);
+    res.status(200).json(comicList.reverse());
   }
 }
 
 async function postComic(req, res) {
-  // ADD-BY-LOTS
-  const dates = [];
-  let n = "287";
+  /* // ADD-BY-LOTS
+  const dates = [
+   "1997-03-26",
+   "1999-08-04",
+  ];
+  let n = "1997";
 
   dates.map(async (date) => {
     let c = new Comic({
       date: date,
-      nameUsa: `Incredible Hulk Vol 1 #${n}`,
+      nameUsa: `Incredible Hulk Annual Vol 1 #${n}`,
       nameBra: "?",
-      vol: "Incredible Hulk Vol 1",
+      vol: "Incredible Hulk Annual Vol 1",
       downloaded: false,
       readen: false,
       translated: false,
@@ -31,10 +34,12 @@ async function postComic(req, res) {
       newCharacters: [],
       stories: "?",
       arc: "?",
-      cover: `/images/covers/Incredible_Hulk_Vol_1_${n}.jpg`,
+      cover: `/images/covers/Incredible_Hulk_Annual_Vol_1_${n}.jpg`,
     });
 
-    if (n == "291") c.arc = "Assistant Editor's Month 1984";
+    if (n == "16") c.arc = "Lifeform";
+    if (n == "17") c.arc = "Subterranean Wars";
+    if (n == "18") c.arc = "Return of the Defenders Wars";
 
     console.log(c);
     n++;
@@ -44,9 +49,9 @@ async function postComic(req, res) {
       if (err) handleError(err);
     });
   });
-
+ */
   // ADD-BY-ONE
-  /* const newComic = new Comic({
+  const newComic = new Comic({
     date: req.body.date,
     nameUsa: req.body.nameUsa,
     nameBra: req.body.nameBra,
@@ -70,7 +75,7 @@ async function postComic(req, res) {
   await newComic.save((err) => {
     // eslint-disable-next-line no-undef
     if (err) handleError(err);
-  }); */
+  });
 
   res.status(200).json(messages.sucessSave);
 }
