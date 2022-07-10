@@ -16,19 +16,22 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
-   "2016-08-10"
+   "2010-05-19",
+   "2010-06-16",
+   "2010-07-21",
+   "2010-08-18"
   ];
   let n = 1;
 
   dates.map(async (date) => {
     let c = new Comic({
-      vol: "Civil War II - The Accused Vol 1",
-      cover: `/images/covers/Civil_War_II_The_Accused_Vol_1_${n}.jpg`,
+      vol: "Age of Heroes Vol 1",
+      cover: `/images/covers/Age_of_Heroes_Vol_1_${n}.jpg`,
       //cover: "/images/covers/no_cover.jpg",
       //irrelevant: true,
       downloaded: true,
       translated: true,
-      nameBra: "Guerra Civil II - O Acusado v1",
+      nameBra: "Era de Heróis v1",
       date: date,
       readen: false,
       earths: ["62a5421acc8a92fac50099af"],
@@ -37,10 +40,13 @@ async function postComic(req, res) {
       arc: "?",
     });
 
-    c.nameUsa = `${c.vol} #${n}`;
+    c.nameUsa = `${c.vol} #${n}-5`;
 
-    if (n === 1) c.arc = "Civil War II";
-
+    if (n === 4) c.arc = "Heroic Age";
+    if (n === 3) c.arc = "Heroic Age";
+    if (n === 2) c.arc = "Heroic Age";
+    if (n === 1) c.arc = "Heroic Age";
+    
     console.log(c);
     n++;
 
