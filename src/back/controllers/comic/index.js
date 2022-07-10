@@ -16,24 +16,19 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
-  "2011-03-02",
-  "2011-03-09",
-  "2011-03-16",
-  "2011-03-23",
-  "2011-03-30"
- 
+   "2016-08-10"
   ];
   let n = 1;
 
   dates.map(async (date) => {
     let c = new Comic({
-      vol: "5 Ronin Vol 1",
-      cover: `/images/covers/5_Ronin_Vol_1_${n}.jpg`,
+      vol: "Civil War II - The Accused Vol 1",
+      cover: `/images/covers/Civil_War_II_The_Accused_Vol_1_${n}.jpg`,
       //cover: "/images/covers/no_cover.jpg",
       //irrelevant: true,
       downloaded: true,
       translated: true,
-      nameBra: "5 Ronin Vol 1",
+      nameBra: "Guerra Civil II - O Acusado v1",
       date: date,
       readen: false,
       earths: ["62a5421acc8a92fac50099af"],
@@ -44,8 +39,8 @@ async function postComic(req, res) {
 
     c.nameUsa = `${c.vol} #${n}`;
 
-    //if (n === 24) c.arc = "Impossible Things Happen Every Day";
-    
+    if (n === 1) c.arc = "Civil War II";
+
     console.log(c);
     n++;
 

@@ -41,8 +41,10 @@ const MainUpdate = () => {
       if (e.target.id === "newCharacters")
         newComic.newCharacters = [e.target.value];
 
-      if (e.target.id === "cover" && e.target.files[0])
-        newComic.cover = e.target.files[0].name;
+        
+       if(e.target.id !== "cover") { newComic.cover = "" } else {
+         if(e.target.files[0]) newComic.cover = e.target.files[0].name
+       }
 
       setNewComic(newComic);
       console.log(newComic);
