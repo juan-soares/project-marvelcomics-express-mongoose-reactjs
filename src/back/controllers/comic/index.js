@@ -16,30 +16,36 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
-   
+  "2011-03-02",
+  "2011-03-09",
+  "2011-03-16",
+  "2011-03-23",
+  "2011-03-30"
+ 
   ];
   let n = 1;
 
   dates.map(async (date) => {
     let c = new Comic({
-      cover: `/images/covers/X-Men_Unlimited_Infinity_Comic_Vol_1_${n}.jpg`,
-      vol: "X-Men Unlimited Infinity Comic Vol 1",
+      vol: "5 Ronin Vol 1",
+      cover: `/images/covers/5_Ronin_Vol_1_${n}.jpg`,
+      //cover: "/images/covers/no_cover.jpg",
+      //irrelevant: true,
+      downloaded: true,
+      translated: true,
+      nameBra: "5 Ronin Vol 1",
       date: date,
-      nameBra: "?",
-      downloaded: false,
       readen: false,
-      translated: false,
       earths: ["62a5421acc8a92fac50099af"],
       newCharacters: [],
       stories: "?",
       arc: "?",
     });
 
-    c.nameUsa = `${c.vol} #${n}`
+    c.nameUsa = `${c.vol} #${n}`;
 
-    //if (n === 3) c.arc = "Destiny of X";
-
-
+    //if (n === 24) c.arc = "Impossible Things Happen Every Day";
+    
     console.log(c);
     n++;
 
@@ -49,7 +55,7 @@ async function postComic(req, res) {
     });
   });
 
-/*   // ADD-BY-ONE
+  /*   // ADD-BY-ONE
   const newComic = new Comic({
     date: req.body.date,
     nameUsa: req.body.nameUsa,
