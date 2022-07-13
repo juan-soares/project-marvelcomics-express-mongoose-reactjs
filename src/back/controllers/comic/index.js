@@ -16,36 +16,35 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
-   "2010-05-19",
-   "2010-06-16",
-   "2010-07-21",
-   "2010-08-18"
-  ];
+   "2019-03-13",
+   "2019-04-10",
+   "2019-05-08",
+   "2019-06-12",
+   "2019-07-10"
+  ]
+   
   let n = 1;
 
   dates.map(async (date) => {
     let c = new Comic({
-      vol: "Age of Heroes Vol 1",
-      cover: `/images/covers/Age_of_Heroes_Vol_1_${n}.jpg`,
+      vol: "Age of X-Man: Apocalypse & the X-Tracts Vol 1",
+      cover: `/images/covers/Age_of_X-Man_Apocalypse_The_X-Tracts_Vol_1_${n}.jpg`,
       //cover: "/images/covers/no_cover.jpg",
       //irrelevant: true,
       downloaded: true,
       translated: true,
-      nameBra: "Era de Heróis v1",
+      nameBra: "Era do X-Man - Apocalipse & os X-Tratores v1",
       date: date,
       readen: false,
       earths: ["62a5421acc8a92fac50099af"],
       newCharacters: [],
       stories: "?",
-      arc: "?",
+      arc: "Age of X-Man",
     });
 
-    c.nameUsa = `${c.vol} #${n}-5`;
+    c.nameUsa = `${c.vol} #${n}`;
 
-    if (n === 4) c.arc = "Heroic Age";
-    if (n === 3) c.arc = "Heroic Age";
-    if (n === 2) c.arc = "Heroic Age";
-    if (n === 1) c.arc = "Heroic Age";
+    //if (n === 11) c.arc = "Age of Ultron";
     
     console.log(c);
     n++;
