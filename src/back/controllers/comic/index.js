@@ -16,24 +16,21 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
-   "2019-03-13",
-   "2019-04-10",
-   "2019-05-08",
-   "2019-06-12",
-   "2019-07-10"
+    "2011-03-30",
+    "2011-04-27"
   ]
    
   let n = 1;
 
   dates.map(async (date) => {
     let c = new Comic({
-      vol: "Age of X-Man: Apocalypse & the X-Tracts Vol 1",
-      cover: `/images/covers/Age_of_X-Man_Apocalypse_The_X-Tracts_Vol_1_${n}.jpg`,
+      vol: "Age of X: Universe Vol 1",
+      cover: `/images/covers/Age_of_X_Universe_Vol_1_${n}.jpg`,
       //cover: "/images/covers/no_cover.jpg",
       //irrelevant: true,
       downloaded: true,
       translated: true,
-      nameBra: "Era do X-Man - Apocalipse & os X-Tratores v1",
+      nameBra: "Era do X - Universo v1",
       date: date,
       readen: false,
       earths: ["62a5421acc8a92fac50099af"],
