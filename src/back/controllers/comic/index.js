@@ -16,15 +16,16 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
-   "2022-07-13"   
+  "1995-09-21"
+
   ]
    
-  let n = 1;
+  let n = 'Infinity';
 
   dates.map(async (date) => {
     let c = new Comic({
-      vol: "X-Men: Hellfire Gala Vol 1",
-      cover: `/images/covers/X-Men_Hellfire_Gala_Vol_1_${n}.jpg`,
+      vol: "All New Exiles Vol 1",
+      cover: `/images/covers/All_New_Exiles_Vol_1_${n}.jpg`,
       //cover: "/images/covers/no_cover.jpg",
       //irrelevant: true,
       downloaded: true,
@@ -35,16 +36,17 @@ async function postComic(req, res) {
       earths: ["62a5421acc8a92fac50099af"],
       newCharacters: [],
       stories: "?",
-      arc: "Destiny of X",
+      arc: "?",
     });
 
     c.nameUsa = `${c.vol} #${n}`;
 
   // if (n < 11) c.translated = true;
-  // if (n === 33) c.arc = "X-Men: Green";
-    
-   
-    console.log(c);
+ if (n === "Infinity") c.arc = "Black September";
+
+
+
+ console.log(c);
     n++;
 
     await c.save((err) => {
