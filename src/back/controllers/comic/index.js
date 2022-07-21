@@ -16,16 +16,15 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
-  "1995-09-21"
-
+ "1995-10-01"
   ]
    
-  let n = 'Infinity';
+  let n = '1';
 
   dates.map(async (date) => {
     let c = new Comic({
-      vol: "All New Exiles Vol 1",
-      cover: `/images/covers/All_New_Exiles_Vol_1_${n}.jpg`,
+      vol: "UltraForce/Avengers Vol 1",
+      cover: `/images/covers/Ultraforce_Avengers_Vol_1_${n}.jpg`,
       //cover: "/images/covers/no_cover.jpg",
       //irrelevant: true,
       downloaded: true,
@@ -42,7 +41,7 @@ async function postComic(req, res) {
     c.nameUsa = `${c.vol} #${n}`;
 
   // if (n < 11) c.translated = true;
- if (n === "Infinity") c.arc = "Black September";
+ //if (n === "1") c.arc = "Countdown to Black September";
 
 
 
