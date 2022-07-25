@@ -16,24 +16,20 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
- "2015-01-28",
- "2015-02-25",
- "2015-04-01",
- "2015-05-13",
- "2015-06-24"
+  "2022-01-26"
   ]
    
   let n = 1;
 
   dates.map(async (date) => {
     let c = new Comic({
-      vol: "Uncanny Avengers Vol 2",
-      cover: `/images/covers/Uncanny_Avengers_Vol_2_${n}.jpg`,
+      vol: "Mary Jane & Black Cat: Beyond Vol 1",
+      cover: `/images/covers/Mary_Jane_&_Black_Cat_Beyond_Vol_1_${n}.jpg`,
       //cover: "/images/covers/no_cover.jpg",
       //irrelevant: true,
       downloaded: true,
       translated: false,
-      nameBra: "Fabulosos Vingadores v2",
+      nameBra: "?",
       date: date,
       readen: false,
       earths: ["62a5421acc8a92fac50099af"],
@@ -44,9 +40,9 @@ async function postComic(req, res) {
 
     c.nameUsa = `${c.vol} #${n}`;
 
-   //if (n < 42) c.translated = true;
- if (n < 4 ) c.arc = "Avengers NOW!";
-
+  //if (n === 6) c.translated = true;
+  if (n === 1) c.arc = "Beyond";
+  
  console.log(c);
     n++;
 
