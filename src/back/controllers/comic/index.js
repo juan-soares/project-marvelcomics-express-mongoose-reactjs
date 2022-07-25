@@ -16,15 +16,17 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
-  "2022-01-26"
+  "2022-01-19",
+  "2022-03-02",
+  "2022-03-23"
   ]
    
   let n = 1;
 
   dates.map(async (date) => {
     let c = new Comic({
-      vol: "Mary Jane & Black Cat: Beyond Vol 1",
-      cover: `/images/covers/Mary_Jane_&_Black_Cat_Beyond_Vol_1_${n}.jpg`,
+      vol: "Devil's Reign: X-Men Vol 1",
+      cover: `/images/covers/Devil's_Reign_X-Men_Vol_1_${n}.jpg`,
       //cover: "/images/covers/no_cover.jpg",
       //irrelevant: true,
       downloaded: true,
@@ -41,7 +43,7 @@ async function postComic(req, res) {
     c.nameUsa = `${c.vol} #${n}`;
 
   //if (n === 6) c.translated = true;
-  if (n === 1) c.arc = "Beyond";
+  if (n > 0) c.arc = "Devil's Reign";
   
  console.log(c);
     n++;
