@@ -16,15 +16,18 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
-   "2021-06-16"
+   "2021-07-14",
+   "2021-08-04",
+   "2021-08-18",
+   "2021-09-01"
   ];
 
   let n = 1;
 
   dates.map(async (date) => {
     let c = new Comic({
-      vol: "Planet-Size X-Men Vol 1",
-      cover: `/images/covers/Planet-Size_X-Men_Vol_1_${n}.jpg`,
+      vol: "Sinister War Vol 1",
+      cover: `/images/covers/Sinister_War_Vol_1_${n}.jpg`,
       //cover: "/images/covers/no_cover.jpg",
       //irrelevant: true,
       downloaded: true,
@@ -41,7 +44,7 @@ async function postComic(req, res) {
     c.nameUsa = `${c.vol} #${n}`;
 
     //if (n === 1) c.translated = true;
-    if (n === 1) c.arc = "Hellfire Gala";
+    if (n < 5) c.arc = "Sinister War";
     
     
     
