@@ -16,18 +16,18 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
-   "2021-07-14",
-   "2021-08-04",
-   "2021-08-18",
-   "2021-09-01"
+   "2022-03-23",
+   "2022-05-18",
+   "2022-06-29",
+       "2022-07-27"
   ];
 
   let n = 1;
 
   dates.map(async (date) => {
     let c = new Comic({
-      vol: "Sinister War Vol 1",
-      cover: `/images/covers/Sinister_War_Vol_1_${n}.jpg`,
+      vol: "Wolverine: Patch Vol 1",
+      cover: `/images/covers/Wolverine_Patch_Vol_1_${n}.jpg`,
       //cover: "/images/covers/no_cover.jpg",
       //irrelevant: true,
       downloaded: true,
@@ -44,7 +44,7 @@ async function postComic(req, res) {
     c.nameUsa = `${c.vol} #${n}`;
 
     //if (n === 1) c.translated = true;
-    if (n < 5) c.arc = "Sinister War";
+    //if (n === 3) c.arc = "Homeland";
     
     
     
