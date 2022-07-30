@@ -16,20 +16,20 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
- "2010-07-14"
+   "2020-08-05",
   ];
 
   let n = 1;
 
   dates.map(async (date) => {
     let c = new Comic({
-      vol: "Uncanny X-Men: The Heroic Age Vol 1",
-      cover: `/images/covers/Uncanny_X-Men_The_Heroic_Age_Vol_1_${n}.jpg`,
+      vol: "Lords of Empyre: Celestial Messiah Vol 1",
+      cover: `/images/covers/Lords_of_Empyre_Celestial_Messiah_Vol_1_${n}.jpg`,
       //cover: "/images/covers/no_cover.jpg",
       //irrelevant: true,
       downloaded: true,
       translated: true,
-      nameBra: "Fabulosos X-Men - A Era Heróica v1",
+      nameBra: "Senhores do Impéryo - Messias Celestial v1",
       date: date,
       readen: false,
       earths: ["62a5421acc8a92fac50099af"],
@@ -40,8 +40,8 @@ async function postComic(req, res) {
 
     c.nameUsa = `${c.vol}  #${n}`;
 
-    //if (n === 1) c.translated = true;
-    if (n > 0) c.arc = "Heroic Age";
+    //if (n > 4) c.translated = false;
+    if (n < 100) c.arc = "Empyre";
        
     
     console.log(c);
