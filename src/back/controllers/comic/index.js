@@ -16,20 +16,22 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
-   "2020-08-05",
+    "2019-05-15",
+    "2019-05-29",
+    "2019-06-19"
   ];
 
   let n = 1;
 
   dates.map(async (date) => {
     let c = new Comic({
-      vol: "Lords of Empyre: Celestial Messiah Vol 1",
-      cover: `/images/covers/Lords_of_Empyre_Celestial_Messiah_Vol_1_${n}.jpg`,
+      vol: "Spider-Man & the League of Realms Vol 1",
+      cover: `/images/covers/Spider-Man_&_the_League_of_Realms_Vol_1_${n}.jpg`,
       //cover: "/images/covers/no_cover.jpg",
       //irrelevant: true,
       downloaded: true,
       translated: true,
-      nameBra: "Senhores do Impéryo - Messias Celestial v1",
+      nameBra: "Homem-Aranha & a Liga dos Reinos v1",
       date: date,
       readen: false,
       earths: ["62a5421acc8a92fac50099af"],
@@ -40,10 +42,9 @@ async function postComic(req, res) {
 
     c.nameUsa = `${c.vol}  #${n}`;
 
-    //if (n > 4) c.translated = false;
-    if (n < 100) c.arc = "Empyre";
-       
-    
+    //if (n > 2) c.translated = false;
+    if (n > 0 ) c.arc = "War of the Realms";
+
     console.log(c);
     n++;
 
