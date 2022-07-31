@@ -16,22 +16,24 @@ async function getComic(req, res) {
 async function postComic(req, res) {
   // ADD-BY-LOTS
   const dates = [
-    "2019-05-15",
-    "2019-05-29",
-    "2019-06-19"
+   '2015-05-27',
+   "2015-06-24",
+   "2015-08-08",
+   "2015-09-16",
+   "2015-11-11"
   ];
 
   let n = 1;
 
   dates.map(async (date) => {
     let c = new Comic({
-      vol: "Spider-Man & the League of Realms Vol 1",
-      cover: `/images/covers/Spider-Man_&_the_League_of_Realms_Vol_1_${n}.jpg`,
+      vol: "Infinity Gauntlet Vol 2",
+      cover: `/images/covers/Infinity_Gauntlet_Vol_2_${n}.jpg`,
       //cover: "/images/covers/no_cover.jpg",
       //irrelevant: true,
       downloaded: true,
       translated: true,
-      nameBra: "Homem-Aranha & a Liga dos Reinos v1",
+      nameBra: "Desafio Infinito v2",
       date: date,
       readen: false,
       earths: ["62a5421acc8a92fac50099af"],
@@ -40,10 +42,10 @@ async function postComic(req, res) {
       arc: "?",
     });
 
-    c.nameUsa = `${c.vol}  #${n}`;
+    c.nameUsa = `${c.vol} #${n}`;
 
     //if (n > 2) c.translated = false;
-    if (n > 0 ) c.arc = "War of the Realms";
+    if (n > 0 ) c.arc = "Secret Wars (2015 Event)";
 
     console.log(c);
     n++;
